@@ -235,13 +235,20 @@ void forward2(int repeticiones) {
 void loop() {
   // Repite la trayectoria 3 veces y espera 1 s entre bloques.
   forward1(10);
+  alto();
   spin1(5);
+  alto();
   forward2(5);
+  alto();
   spin1(2);
+  alto();
   forward1(20);
+  alto();
   spin1(3);
+  alto();
   forward1(5);
+  alto();
   spin1(10);
-  
+  alto();
 
 }
