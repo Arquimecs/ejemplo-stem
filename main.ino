@@ -105,10 +105,10 @@ void aplicarMotor(uint8_t pinIN1, uint8_t pinIN2, uint8_t pinEN, bool invertido,
 
   if (adelante) {
     digitalWrite(pinIN1, HIGH);
-    digitalWrite(pinIN2, LOW);
+    digitalWrite(pinIN2, HIGH);
   } else {
     digitalWrite(pinIN1, LOW);
-    digitalWrite(pinIN2, HIGH);
+    digitalWrite(pinIN2, LOW);
   }
 
   analogWrite(pinEN, pwm);
@@ -197,6 +197,7 @@ void setup() {
     5) Retrocede 0.7 s al 50%
     6) Alto 0.5 s
 */
+
 void forward1(int repeticiones) {
   for (int i = 0; i < repeticiones; i++) {
     avanzar(70);         delay(1500);      
@@ -236,19 +237,4 @@ void loop() {
   // Repite la trayectoria 3 veces y espera 1 s entre bloques.
   forward1(10);
   alto();
-  spin1(5);
-  alto();
-  forward2(5);
-  alto();
-  spin1(2);
-  alto();
-  forward1(20);
-  alto();
-  spin1(3);
-  alto();
-  forward1(5);
-  alto();
-  spin1(10);
-  alto();
-
 }
