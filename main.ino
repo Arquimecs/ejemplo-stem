@@ -212,22 +212,4 @@ void trayectoriaEjemplo(int repeticiones) {
 void loop() {
   // Repite la trayectoria 3 veces y espera 1 s entre bloques.
   trayectoriaEjemplo(10);
-  alto();
-  delay(1000); // espera 1000 milisegundos (1 segundo)
-
-  // el siguiente ejemplo avanza en curva hacia la izquierda con diferencia 
-  // de velocidad en ambos motores y luego alterna a la derecha.
-  mover(60,100); // motor izquierdo +60, derecho +100
-  delay(1000); // espera 1 segundo, los motores seguirán funcionando.
-  mover(100, 60); // motor izquierdo +100, derecho +60
-  delay(1000); // espera 1 segundo, los motores seguirán funconando.
-
-  // también puede usarse con valores negativos
-  mover(-75, 40); // mueve la rueda izquierda a -75, mientras mueve la derecha a +100
-  // resultará en un movimiento de reversa con curva a la derecha.
-  delay(1000); // espera 1 segundo, los motores seguirán funcionando.
-
-  alto(); // se detienen los motores. equivalente a llamar mover(0,0);
-  delay(3000); // espera 3 segundos. los motores estarán detenidos por la llamada alto()
-
 }
