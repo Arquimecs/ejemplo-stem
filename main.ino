@@ -42,13 +42,13 @@ Si vas a utilizar este código como se muestra, es necesario asegurar las conexi
 // Opcionalmente MODIFICAR LAS ASIGNACIONES DE PINES de acuerdo a tu robot.
 // O bien MODIFICAR LAS CONEXIONES FÍSICAS entre tu Arduino y el L298N si se desea usar estas.
 // Asegurarse que ENA y ENB estén conectados a PINES PWM, señalados con un "~" en el Arduino UNO.
-const uint8_t ENA = 5;   // Enable control de velocidad Motor Izquierdo (PWM)
-const uint8_t IN1 = 8;   // Dirección Motor Izquierdo
-const uint8_t IN2 = 9;   // Dirección Motor Izquierdo
+const uint8_t ENA = 2;   // Enable control de velocidad Motor Izquierdo (PWM)
+const uint8_t IN1 = 3;   // Dirección Motor Izquierdo
+const uint8_t IN2 = 4;   // Dirección Motor Izquierdo
 
-const uint8_t IN3 = 10;  // Dirección Motor Derecho
-const uint8_t IN4 = 11;  // Dirección Motor Derecho
-const uint8_t ENB = 6;   // Enable control de velocidad Motor Derecho (PWM)
+const uint8_t IN3 = 5;  // Dirección Motor Derecho
+const uint8_t IN4 = 6;  // Dirección Motor Derecho
+const uint8_t ENB = 9;   // Enable control de velocidad Motor Derecho (PWM)
 
 // AJUSTES DE OPERACIÓN:
 // Si un motor gira al revés, cambia a true para invertir su sentido.
