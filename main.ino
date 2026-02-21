@@ -197,9 +197,32 @@ void setup() {
     5) Retrocede 0.7 s al 50%
     6) Alto 0.5 s
 */
-void trayectoriaEjemplo(int repeticiones) {
+void forward1(int repeticiones) {
   for (int i = 0; i < repeticiones; i++) {
-    avanzar(70);         delay(1500);
+    avanzar(70);         delay(1500);      
+   /* girarDerecha(70);    delay(600);
+    avanzar(60);         delay(1000);
+    girarIzquierda(70);  delay(600);
+    retroceder(50);      delay(700);
+    alto();              delay(500); */
+  }
+}
+
+void spin1(int repeticiones) {
+  for (int i = 0; i < repeticiones; i++) {
+   girarDerecha(70);    delay(600);
+  }
+}
+
+void spin2(int repeticiones) {
+  for (int i = 0; i < repeticiones; i++) {
+   girarIzquierda(70);    delay(600);
+  }
+}
+
+void forward2(int repeticiones) {
+  for (int i = 0; i < repeticiones; i++) {
+    avanzar(50);         delay(1500);      
    /* girarDerecha(70);    delay(600);
     avanzar(60);         delay(1000);
     girarIzquierda(70);  delay(600);
@@ -211,23 +234,14 @@ void trayectoriaEjemplo(int repeticiones) {
 // Esta rutina se ejecuta repite automáticamente después de ejecutar SETUP.
 void loop() {
   // Repite la trayectoria 3 veces y espera 1 s entre bloques.
-  trayectoriaEjemplo(10);
-  alto();
-  delay(1000); // espera 1000 milisegundos (1 segundo)
-
-  // el siguiente ejemplo avanza en curva hacia la izquierda con diferencia 
-  // de velocidad en ambos motores y luego alterna a la derecha.
-  mover(60,100); // motor izquierdo +60, derecho +100
-  delay(1000); // espera 1 segundo, los motores seguirán funcionando.
-  mover(100, 60); // motor izquierdo +100, derecho +60
-  delay(1000); // espera 1 segundo, los motores seguirán funconando.
-
-  // también puede usarse con valores negativos
-  mover(-75, 40); // mueve la rueda izquierda a -75, mientras mueve la derecha a +100
-  // resultará en un movimiento de reversa con curva a la derecha.
-  delay(1000); // espera 1 segundo, los motores seguirán funcionando.
-
-  alto(); // se detienen los motores. equivalente a llamar mover(0,0);
-  delay(3000); // espera 3 segundos. los motores estarán detenidos por la llamada alto()
+  forward1(10);
+  spin1(5);
+  forward2(5);
+  spin1(2);
+  forward1(20);
+  spin1(3);
+  forward1(5);
+  spin1(10);
+  
 
 }
